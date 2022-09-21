@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Upload images using multer</title>
+</head>
+<body>
+    <form method="POST" action="/single" enctype="multipart/form-data">
+        <div>
+            <label>Upload an image</label>
+            <input type="file" name="image" required/>
+        </div>
+        <div>
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
+
+    <hr>
+    <hr>
+
+    <form method="POST" action="/multiple" enctype="multipart/form-data">
+        <div>
+            <label>Upload multiple images</label>
+            <input type="file" name="images" required multiple  />
+        </div>
+        <div>
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
+</body>
+</html>

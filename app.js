@@ -48,24 +48,33 @@ const checkFileType = function (file, cb) {
 };
 
 app.post("/single", upload.single("image"), (req, res) => {
+
+    // Old code
     // if (req.file) {
     //   res.send("Single file uploaded successfully");
     // } else {
     //   res.status(400).send("Please upload a valid image");
     // }
+
+    // New code
     console.log(JSON.stringify(req.file))
-  var response = '<a href="/">Back</a><br>'
-  response += "Image uploaded successfully.<br>"
-  response += `<img src="${req.file.path}" /><br>`
-  return res.send(response)
+    var response = '<a href="/">Back</a><br>'
+    response += "Image uploaded successfully.<br>"
+    response += `<img src="${req.file.path}" /><br>`
+
+    return res.send(response)
   });
 
 app.post("/multiple", upload.array("images", 5), (req, res) => {
+
+    // Old code
     // if (req.files) {
     //   res.send("Muliple files uploaded successfully");
     // } else {
     //   res.status(400).send("Please upload a valid images");
     // }
+
+    // New code
     var response = '<a href="/">Back</a><br>'
     response += "Images uploaded successfully.<br>"
     for(var i=0;i<req.files.length;i++){
